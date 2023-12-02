@@ -21,6 +21,6 @@ This C++ program is designed to retrieve various system-related serial numbers a
 
 ## Executable Download
 
-You can download the executable file for this program from the [SerialChecker v0.1 release](https://github.com/EdoBergamo/SerialChecker/releases/tag/v0.1) on GitHub.
+You can download the executable file for this program from the [SerialChecker release](https://github.com/EdoBergamo/SerialChecker/releases) on GitHub.
 
 For any issues, suggestions, or contributions, feel free to contact the developer or make modifications as necessary.
