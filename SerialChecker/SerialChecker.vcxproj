@@ -127,7 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="console_functions.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="serials.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="console_functions.h" />
+    <ClInclude Include="serials.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
