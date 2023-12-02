@@ -2,6 +2,11 @@
 #include <iostream>
 #include <sstream>
 
+void setColor(int color) {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, color);
+}
+
 void setConsoleTitle(const std::string& title) {
 	SetConsoleTitleA(title.c_str());
 }
@@ -27,11 +32,15 @@ void displaySectionTitle(const std::string& title, bool found) {
 
 	std::cout << sectionLine << "\n";
 
-	if (found)
-		std::cout << "| \x1b[32m" << std::string(titlePadding, ' ') << centeredTitle << std::string(titlePadding, ' ') << "\x1b[0m|\n";
-	else
-		std::cout << "| \x1b[31m" << std::string(titlePadding, ' ') << centeredTitle << std::string(titlePadding, ' ') << "\x1b[0m|\n";
-	std::cout << sectionLine << "\n";
+    if (found)
+        setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    else
+        setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
+
+    std::cout << "| " << std::string(titlePadding, ' ') << centeredTitle << std::string(titlePadding, ' ') << "|\n";
+
+    setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+    std::cout << sectionLine << "\n";
 }
 
 void serials() {
